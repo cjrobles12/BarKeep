@@ -1,0 +1,58 @@
+﻿@model BarKeep.Models.Supplier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BottleID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottleID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplierID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
