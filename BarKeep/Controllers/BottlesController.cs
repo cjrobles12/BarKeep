@@ -14,11 +14,41 @@ namespace BarKeep.Controllers
     public class BottlesController : Controller
     {
         private BarKeepContext db = new BarKeepContext();
+        //EDIT: Bottles
+        public ActionResult Inventory([Bind(Include = "ID,Name,BottleType,Volume,Cost,Price,Par,Notes,OnHand")] Bottle bottle)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(bottle).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Inventory");
+            }
+
+            return View(db.Bottles.ToList());
+            
+        }
+
+
 
         // GET: Bottles
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : ""
+;         
+            var bottles = from s in db.Bottles
+                          select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    bottles = bottles.OrderByDescending(s => s.Name);
+                    break;
+                default:
+                    bottles = bottles.OrderByDescending(s => s.Price);
+                    break;
+            }
             return View(db.Bottles.ToList());
+
         }
 
         // GET: Bottles/Details/5
@@ -47,7 +77,7 @@ namespace BarKeep.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,BottleType,Volume,Cost,Price,Par,OnHand")] Bottle bottle)
+        public ActionResult Create([Bind(Include = "ID,Name,BottleType,Volume,Cost,Price,Par,Notes,OnHand")] Bottle bottle)
         {
             if (ModelState.IsValid)
             {
@@ -77,12 +107,15 @@ namespace BarKeep.Controllers
             return View(bottle);
         }
 
+
+        
+
         // POST: Bottles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,BottleType,Volume,Cost,Price,Par,OnHand")] Bottle bottle)
+        public ActionResult Edit([Bind(Include = "ID,Name,BottleType,Volume,Cost,Price,Par,Notes,OnHand")] Bottle bottle)
         {
             if (ModelState.IsValid)
             {

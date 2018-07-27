@@ -4,13 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Bar Overview</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Item", "Create")
 </p>
-<table class="table">
+
+<table class="table table-hover table-striped"> @* uses bootstrap for table styling *@
     <tr>
+       
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -59,9 +61,11 @@
             @Html.DisplayFor(modelItem => item.OnHand)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <div class="btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" onclick="location.href='@Url.Action("Details", new { id = item.ID })'">Details</button>
+                <button type="button" onclick="location.href='@Url.Action("Edit", new { id = item.ID })'">Manage Item</button>
+                <button type="button" onclick="location.href='@Url.Action("Delete", new { id = item.ID })'">Remove</button>
+            </div>
         </td>
     </tr>
 }

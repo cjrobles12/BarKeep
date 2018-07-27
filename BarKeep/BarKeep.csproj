@@ -150,7 +150,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BottlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="DAL\BarKeepContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,9 +166,24 @@
     <Compile Include="Migrations\201807270813328_RemoveSupplier.Designer.cs">
       <DependentUpon>201807270813328_RemoveSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807271022527_AddNotesToBottle.cs" />
+    <Compile Include="Migrations\201807271022527_AddNotesToBottle.Designer.cs">
+      <DependentUpon>201807271022527_AddNotesToBottle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807271100035_ChangePriceToDecimal.cs" />
+    <Compile Include="Migrations\201807271100035_ChangePriceToDecimal.Designer.cs">
+      <DependentUpon>201807271100035_ChangePriceToDecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807271200296_ChangeDisplaysAndVolume.cs" />
+    <Compile Include="Migrations\201807271200296_ChangeDisplaysAndVolume.Designer.cs">
+      <DependentUpon>201807271200296_ChangeDisplaysAndVolume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807271520268_FinalChanges.cs" />
+    <Compile Include="Migrations\201807271520268_FinalChanges.Designer.cs">
+      <DependentUpon>201807271520268_FinalChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bottle.cs" />
-    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,11 +228,6 @@
     <Content Include="Views\Bottles\Details.cshtml" />
     <Content Include="Views\Bottles\Edit.cshtml" />
     <Content Include="Views\Bottles\Index.cshtml" />
-    <Content Include="Views\Suppliers\Create.cshtml" />
-    <Content Include="Views\Suppliers\Delete.cshtml" />
-    <Content Include="Views\Suppliers\Details.cshtml" />
-    <Content Include="Views\Suppliers\Edit.cshtml" />
-    <Content Include="Views\Suppliers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -245,6 +254,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807270813328_RemoveSupplier.resx">
       <DependentUpon>201807270813328_RemoveSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807271022527_AddNotesToBottle.resx">
+      <DependentUpon>201807271022527_AddNotesToBottle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807271100035_ChangePriceToDecimal.resx">
+      <DependentUpon>201807271100035_ChangePriceToDecimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807271200296_ChangeDisplaysAndVolume.resx">
+      <DependentUpon>201807271200296_ChangeDisplaysAndVolume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807271520268_FinalChanges.resx">
+      <DependentUpon>201807271520268_FinalChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

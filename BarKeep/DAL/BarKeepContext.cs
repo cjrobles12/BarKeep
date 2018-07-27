@@ -8,15 +8,14 @@ using BarKeep.Models;
 
 namespace BarKeep.DAL
 {
-    public class BarKeepContext : DbContext
+    public class BarKeepContext : DbContext      /* establishes new database context */
     {
         public BarKeepContext() : base("BarKeepContext")
         {
-
+        
         }
 
         public DbSet<Bottle> Bottles { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
 
 
     }

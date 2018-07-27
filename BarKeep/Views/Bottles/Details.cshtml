@@ -10,6 +10,7 @@
     <h4>Bottle</h4>
     <hr />
     <dl class="dl-horizontal">
+        
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -65,10 +66,18 @@
         <dd>
             @Html.DisplayFor(model => model.OnHand)
         </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(m => m.Notes)
+         </dd>
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
+
 </p>

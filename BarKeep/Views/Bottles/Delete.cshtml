@@ -6,75 +6,16 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to remove @Html.DisplayFor(model => model.Name) from your inventory? </h3>
 <div>
-    <h4>Bottle</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BottleType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottleType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Volume)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Volume)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cost)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Par)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Par)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OnHand)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OnHand)
-        </dd>
-
-    </dl>
-
+   
+    
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='@Url.Action("Index")'">No</button>        
         </div>
     }
 </div>
